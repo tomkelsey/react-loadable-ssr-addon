@@ -111,6 +111,10 @@ export default class ReactLoadableSSRAddon {
       }
     }
 
+    if (this.entrypoints.has(names[0])) {
+      origins.add(names[0]);
+    }
+
     if (origins.size === 0) { return [names[0] || id]; }
 
     return Array.from(origins);
